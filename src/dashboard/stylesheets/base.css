@@ -1,0 +1,127 @@
+/*
+*Sources:
+*   https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient
+*/
+body { 
+    font-family: Futura; 
+    padding: 24px; 
+    /*background-color: #AFADB0;*/
+    background-color: #14281D;
+    /*background: linear-gradient(90deg, #FEFFFE, #E9EBF8 95%);*/
+    /*background: radial-gradient(circle at center, #F77E7C, #AB3533 95%);*/
+    } 
+
+    /*
+    *Sources:
+    *   Border Radius from https://www.w3schools.com/css/css_border_rounded.asp
+    *   Styling modeled from 'Learning Web Design,' by Jenniffer Niederst Robbins, page 358.
+    *   
+    *   Width is the width of the element box
+    *   Padding is the space between the words and the border surrounding them.
+    *   Border is the actual line surrounding the element block. 
+    *   Margin is the space surrounding the block
+    *   Border-Radius determines the rounding of the element block. The higher the number, the more rounding there is.
+    */
+
+h1{
+    font-size: 2.5em;
+    color: #C2A878;
+}
+
+p { 
+    width: 40%;
+    padding: 15px;
+    border: 2px solid gray;
+    margin: 5px;
+    border-radius: 10px;
+    color: #14281D;
+    background-color: #ffffff;
+    
+} 
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/*
+*
+*Sources:
+*   background: https://developer.mozilla.org/en-US/docs/Web/CSS/background
+*
+*   line-height: https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+*
+*/
+.flashcard {
+    background-image: url("../images/flashcard.jpeg");
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    border: 0px;
+    font-weight: bold;
+    padding: 10px;
+    line-height: 29px;
+    padding-top: 58px;
+    text-align: center;
+}
+form{
+    color: #C2A878;
+    margin-top: 20px;
+}
+table{
+    color: #F1F5F2;
+}
+button{
+    background-color: #C2A878;
+    margin: 4px;
+}
+#open-frame{
+    display: inline-block
+}
+.submit{
+    background-color: #C2A878;
+    margin: 4px;
+    margin-top: 10px;
+}
+
+/*
+*Styling the anhor tag text
+*
+*The standard decoration has been removed, and a hover action 
+*has been added. The action color was added for the fun of it.
+*
+*I have used these settings before, but the following link also teaches how to use them:
+*https://www.w3schools.com/css/css_link.asp
+*/
+a {
+    text-decoration: none;
+    color: black;
+    }
+a:hover{
+    color:blue
+}
+a:active{
+    color: green;
+}
+nav li{
+    background-color: #C2A878;
+    display: block;
+    padding : 10px;
+    margin:7px;
+    color: #14281D;
+}
+
+nav ul{
+    float: right;
+}
+
+.frame {
+    width: 300px;
+    height: 300px;
+}
