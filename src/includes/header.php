@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../dashboard/stylesheets/base.css">
-        <script src="../dashboard/javascripts/study.js" defer></script>
         <?php echo $load; ?>
         <title><?php echo $title; ?></title>
     </head>

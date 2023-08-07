@@ -1,4 +1,8 @@
 <?php 
+require '../Models/CardModel.php';
+use Models\CardModel;
+$card_model = new CardModel();
+
 $title = 'Flash Cards';
 
 /*
@@ -19,6 +23,9 @@ $content = '';
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(array_key_exists('card_front', $_POST)){
         $deck[] = [$_POST['card_front'], $_POST['card_back']];
+
+        $card_model->create_flashcard($deck);
+
     }
     elseif(array_key_exists('add-row', $_POST)){
         $row_count = $_POST['add-row'] + 1;
@@ -82,5 +89,7 @@ if($_SERVER['REQUEST_METHOD']==='POST' && (array_key_exists('card_front', $_POST
     $content.="</table>";
 }
 
+
 require('../includes/header.php');
+
 ?>

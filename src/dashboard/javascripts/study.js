@@ -1,12 +1,19 @@
-
-console.log('javascript loaded')
-
+//Watch for changes on the deck_selector, then submit deck_form
+let deck_form       = document.getElementById("deck-selection")
+let deck_selector   = document.getElementById("deck")
 let iframe_btn = document.getElementById('open-frame')
 //JS Arrays: https://www.w3schools.com/js/js_arrays.asp
-let front = ['front1','front2','front3']
-let back = ['back1', 'back2', 'back3']
+let front = []
+let back = []
 let term = true
-console.log('button seen')
+
+if(deck){
+    console.log(deck[0]['card_front'])
+    console.log(deck[0]['card_back'])
+    console.log(deck[0]['card_level'])
+    console.log(deck[0]['deck_id'])
+
+}
 
 //source:
 //  https://stackoverflow.com/questions/10418644/creating-an-iframe-with-given-html-dynamically
@@ -49,25 +56,25 @@ function studyCards(){
     close_btn = iframe.contentWindow.document.getElementById('close')
 
     index = 0
-    training_card.innerHTML =  front[index]
+    training_card.innerHTML = deck[index]["card_front"]
 
     //JS event listeners: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
     //JS arrow functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
     next_btn.addEventListener('click', (event)=>{
         index++
-        if(!(index < front.length)){
+        if(!(index < deck.length)){
             index=0
         }
-        training_card.innerHTML = front[index]
+        training_card.innerHTML = deck[index]["card_front"]
         term = true
     })
 
-    flip_btn.addEventListener('click', (event)=>{
+    flip_btn.addEventListener('click', (e)=>{
         term = !term
-        training_card.innerHTML = (term ? front[index] : back[index])
+        training_card.innerHTML = (term ? deck[index]["card_front"] : deck[index]["card_back"])
     })
 
-    close_btn.addEventListener('click', (event)=>{
+    close_btn.addEventListener('click', (e)=>{
         document.body.removeChild(iframe)
         iframe_btn.style.display = ('inline-block')
     })
@@ -76,3 +83,9 @@ function studyCards(){
 
 //https://developer.mozilla.org/en-US/docs/Web/Events
 iframe_btn.addEventListener('click', studyCards)
+deck_selector.addEventListener('change', (e)=>{
+    if(deck_selector.value){
+        deck_form.submit()
+        console.log(true)
+    }
+})
